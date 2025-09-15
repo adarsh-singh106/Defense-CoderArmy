@@ -1,0 +1,54 @@
+# ==========================================
+# OS-specific junk
+# ==========================================
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Node.js / React (Frontend)
+# ==========================================
+node_modules/
+build/
+dist/
+.cache/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# React testing
+coverage/
+
+# ==========================================
+# Python / Flask (Backend)
+# ==========================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.sqlite3
+
+# Flask instance & environment
+instance/
+.env
+venv/
+myenv/
+.env.*
+*.log
+
+# ==========================================
+# IDE / Editors
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==========================================
+# Other
+# ==========================================
+*.bak
+*.tmp
