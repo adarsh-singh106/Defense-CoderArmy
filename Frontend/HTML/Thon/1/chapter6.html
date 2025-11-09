@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: The Final Arc</title>
+</head>
+<body>
+    <h1>Chapter 6: The Final Arc - Media, Multi-Page Sites & Deployment</h1>
+    <hr>
+    
+    <h2>Media Tags: Audio and Video</h2>
+    <p>HTML5 introduced dedicated tags for embedding audio and video files directly into your webpages without needing plugins.</p>
+    
+    <h3>The &lt;audio&gt; Tag</h3>
+    <p>Used to embed sound content. The <code>controls</code> attribute adds play, pause, and volume controls.</p>
+    <pre><code>&lt;audio controls&gt;
+    &lt;source src="path/to/song.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+    <p>Using multiple <code>&lt;source&gt;</code> tags provides fallback options for different browsers.</p>
+    
+    <h3>The &lt;video&gt; Tag</h3>
+    <p>Used to embed a video player. Like audio, <code>controls</code> adds player controls. You can also set <code>width</code> and <code>height</code>.</p>
+    <pre><code>&lt;video width="400" controls&gt;
+    &lt;source src="path/to/video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+    <hr>
+    
+    <h2>Embedding YouTube Videos with &lt;iframe&gt;</h2>
+    <p>An <code>&lt;iframe&gt;</code> (Inline Frame) is used to embed another HTML document within the current one. This is the standard way to embed content from external sites like YouTube or Google Maps.</p>
+    <h3>How to Embed a YouTube Video:</h3>
+    <ol>
+        <li>Go to the YouTube video you want to embed.</li>
+        <li>Click the "Share" button below the video.</li>
+        <li>Click on the "Embed" option.</li>
+        <li>Copy the provided iframe code and paste it into your HTML.</li>
+    </ol>
+    <p>The code will look something like this:</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="YouTube video player" allowfullscreen></iframe>
+    <hr>
+
+    <h2>Building a Multi-Page Website</h2>
+    <p>A multi-page website is just a collection of HTML files linked together. This project is a perfect example!</p>
+    <h3>Structure:</h3>
+    <ul>
+        <li><strong>index.html</strong>: The homepage.</li>
+        <li><strong>about.html</strong>: The about us page.</li>
+        <li><strong>contact.html</strong>: The contact page.</li>
+    </ul>
+    <h3>Linking Pages:</h3>
+    <p>You use the anchor <code>&lt;a&gt;</code> tag with a <strong>relative path</strong> to link your pages. For example, on your homepage (index.html), you would link to the about page like this:</p>
+    <pre><code>&lt;a href="about.html"&gt;About Us&lt;/a&gt;</code></pre>
+    <p>This creates the navigation that allows users to move between the different sections of your site.</p>
+    <hr>
+
+    <h2>Deploying a Static Website</h2>
+    <p>Deployment is the process of making your website live on the internet so anyone can access it. For simple HTML websites (static sites), you can use free services.</p>
+    <h3>Popular Free Deployment Platforms:</h3>
+    <ul>
+        <li><strong>Netlify:</strong> Famous for its simple drag-and-drop deployment. You can drag your project folder directly onto their site, and it will be live in seconds.</li>
+        <li><strong>GitHub Pages:</strong> If your code is hosted on GitHub, you can deploy it as a website with a few clicks.</li>
+        <li><strong>Vercel:</strong> Another excellent platform with a generous free tier, very popular in the developer community.</li>
+    </ul>
+    <p>The process is usually as simple as signing up, linking your code repository or uploading your files, and the platform handles the rest!</p>
+    <hr>
+    
+    <a href="index.html"><button>Back to Home</button></a>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: The Beginning</title>
+</head>
+<body>
+    <h1>Chapter 1: The Beginning - How the Internet Works</h1>
+    <hr>
+
+    <h2>What is the Internet?</h2>
+    <p>The internet is essentially a global network of computers that communicate with each other. Think of it like a massive postal service. To send a package (data), you need an address. In the digital world, this address is called an <strong>IP Address</strong>.</p>
+    <hr>
+
+    <h2>IP Address (Internet Protocol)</h2>
+    <p>An IP address is a unique numerical label assigned to every device connected to a computer network. It's like the home address for your computer or phone. It allows devices to find and communicate with each other.</p>
+    <h3>IPv4 vs. IPv6</h3>
+    <ul>
+        <li><strong>IPv4:</strong> An example is <code>12.3.45.6</code>. It uses a 32-bit format, which allows for about 4.3 billion unique addresses. We've nearly run out of these!</li>
+        <li><strong>IPv6:</strong> A newer, 128-bit version that allows for a virtually limitless number of addresses. This is the future of the internet.</li>
+    </ul>
+    <hr>
+
+    <h2>DNS (Domain Name System)</h2>
+    <p>Remembering IP addresses like <code>8.8.8.8</code> is hard for humans. We prefer names like <code>google.com</code>. The DNS is the phonebook of the internet. When you type a website name (domain name) into your browser, the DNS server looks up the corresponding IP address so your browser can load the website.</p>
+    <h3>How DNS Works (Simplified):</h3>
+    <ol>
+        <li>You type <code>coderarmy.in</code> in your browser.</li>
+        <li>Your browser asks a DNS server, "What is the IP address for coderarmy.in?"</li>
+        <li>The DNS server replies with the IP address.</li>
+        <li>Your browser uses that IP address to request the website's content.</li>
+    </ol>
+    <hr>
+
+    <h2>MAC Address (Media Access Control)</h2>
+    <p>If an IP address is like your home's street address (which can change if you move), the MAC address is like your house's unique serial number. It's a permanent, physical address assigned to the network hardware of your device.</p>
+    <p>Why do we need both? Imagine your Wi-Fi router (ISP) assigns your phone an IP address. If you disconnect, that IP might be given to another device. When data comes back, the network needs to be sure it goes to the <em>correct physical device</em>. The MAC address ensures the data reaches your specific phone, not your dad's phone which might have temporarily gotten the same IP. <strong>Hinglish Mnemonic:</strong> <em>IP address 'Dynamic' hai, MAC address 'Permanent' hai. Simple!</em></p>
+    <hr>
+
+    <h2>Port Numbers</h2>
+    <p>A port number is used to identify a specific application or service on your device. Your computer has one IP address, but you might be browsing the web, checking email, and listening to Spotify all at once. How does the data know where to go?</p>
+    <p>Think of your IP address as an apartment building's address. The port number is the apartment number. When data arrives, the port number directs it to the correct application (e.g., Port 443 for secure websites, Port 80 for standard websites).</p>
+    <hr>
+    
+    <a href="index.html"><button>Back to Home</button></a>
+</body>
+</html>

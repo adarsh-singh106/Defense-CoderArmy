@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Boilerplate & Fundamentals</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="chapter1.html">Chapter 1</a> |
+            <a href="chapter2.html">Chapter 2</a> |
+            <a href="chapter3.html">Chapter 3</a> |
+            <a href="chapter5.html">Chapter 5</a> |
+            <a href="chapter6.html">Chapter 6</a>
+        </nav>
+        <hr>
+        <h1>Chapter 4: HTML Boilerplate and Fundamentals 🛠️</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>The HTML Boilerplate Explained</h2>
+            <p>While browsers are forgiving, writing HTML without a proper structure is bad practice. The "boilerplate" is the standard starting template for any HTML document. It ensures browsers render your page correctly and provides essential metadata.</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    ... your content here ...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <ul>
+                <li><strong><code>&lt;!DOCTYPE html&gt;</code>:</strong> Declares the document type. This specific line tells the browser to render the page in "standards mode" using the HTML5 specification. Without it, the browser might enter "quirks mode" and render things unpredictably.</li>
+                <li><strong><code>&lt;html lang="en"&gt;</code>:</strong> The root element of the page. The <code>lang</code> attribute specifies the primary language of the page's content, which is important for accessibility and search engines.</li>
+                <li><strong><code>&lt;head&gt;</code>:</strong> Contains metadata (data about the data). This content is not displayed on the page itself.</li>
+                <li><strong><code>&lt;meta charset="UTF-8"&gt;</code>:</strong> Specifies the character encoding. UTF-8 is the standard and supports almost all characters and symbols, including emojis (😂) and different languages (नमस्ते).</li>
+                <li><strong><code>&lt;meta name="viewport" ...&gt;</code>:</strong> Crucial for responsive design. It tells the browser to set the width of the page to the device's screen width and set the initial zoom level to 100%.</li>
+                <li><strong><code>&lt;title&gt;</code>:</strong> Sets the title of the browser tab and is very important for SEO (Search Engine Optimization).</li>
+                <li><strong><code>&lt;body&gt;</code>:</strong> Contains all the visible content of the web page.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>File Path System</h2>
+            <p>File paths tell the browser where to find files like images, other HTML pages, or stylesheets. There are two types:</p>
+            
+            <h3>1. Relative Paths</h3>
+            <p>Paths relative to the current file's location. This is the <strong>preferred method</strong> for internal project files because it works no matter where you host your project folder.</p>
+            <pre>
+PROJECT_FOLDER/
+├── index.html
+├── contact.html
+└── assets/
+    └── images/
+        └── logo.png
+            </pre>
+            <ul>
+                <li>From <code>index.html</code> to <code>contact.html</code>: <code>&lt;a href="contact.html"&gt;</code> (Same directory)</li>
+                <li>From <code>index.html</code> to <code>logo.png</code>: <code>&lt;img src="assets/images/logo.png"&gt;</code> (Go into a child directory)</li>
+                <li>From <code>contact.html</code> to go "up" and then "down" into assets: <code>&lt;img src="assets/images/logo.png"&gt;</code></li>
+                <li><strong>To go one level up:</strong> Use <code>../</code>. If `logo.png` was in a directory *above* `PROJECT_FOLDER`, the path from `index.html` would be `../logo.png`.</li>
+            </ul>
+
+            <h3>2. Absolute Paths</h3>
+            <p>A full URL path to a resource. Used for linking to external websites or resources hosted on a different server.</p>
+            <ul>
+                <li><strong>Web URL:</strong> <code>&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;</code></li>
+                <li><strong>Local System Path (DO NOT USE):</strong> <code>&lt;img src="C:/Users/Rohit/Desktop/image.png"&gt;</code>. This is strongly discouraged. It will only work on your computer and is a major security risk in a web context, as browsers block local file access from web pages.</li>
+            </ul>
+        </section>
+
+        <hr>
+        
+        <section>
+            <h2>Grouping Content: Divs, Semantic Tags, Classes & IDs</h2>
+
+            <h3><code>&lt;div&gt;</code> (Division)</h3>
+            <p>The <code>&lt;div&gt;</code> is a generic, non-semantic container. Its primary purpose is to group elements together so you can apply styles (with CSS) or manipulate them (with JavaScript). By itself, it has no meaning.</p>
+            
+            <h3>Semantic HTML Tags</h3>
+            <p>Modern HTML prefers semantic tags over divs wherever possible. These tags provide meaning to the structure of your page for both the browser and developers.</p>
+            <ul>
+                <li><strong><code>&lt;header&gt;</code>:</strong> Contains introductory content or navigation links.</li>
+                <li><strong><code>&lt;main&gt;</code>:</strong> Contains the dominant, main content of the page.</li>
+                <li><strong><code>&lt;footer&gt;</code>:</strong> Contains footer content like copyright, contact info, etc.</li>
+                <li><strong><code>&lt;nav&gt;</code>:</strong> Specifically for major navigation blocks.</li>
+                <li><strong><code>&lt;section&gt;</code>:</strong> A thematic grouping of content, typically with a heading.</li>
+                <li><strong><code>&lt;article&gt;</code>:</strong> For self-contained content like a blog post or news story.</li>
+            </ul>
+
+            <h3>Class and ID Attributes</h3>
+            <p>These are global attributes that can be added to any HTML element for identification.</p>
+            <ul>
+                <li><strong><code>class</code>:</strong> Used to group multiple elements together. The same class name can be used on many elements. Think of it as a "category" or "tag."</li>
+                <li><strong><code>id</code>:</strong> Must be <strong>absolutely unique</strong> within the entire HTML document. It is used to target one specific element. Think of it as a unique serial number.</li>
+            </ul>
+            <blockquote>
+                <strong>Hinglish Mnemonic:</strong> "Ek <strong>class</strong> mein multiple students, par har student ka <strong>ID</strong> card unique hota hai." (A class has multiple students, but each student's ID card is unique).
+            </blockquote>
+        </section>
+    </main>
+
+    <hr>
+    <footer>
+        <p>&copy; 2025 Coder Army Hackathon. Project by Adarsh Singh</p>
+    </footer>
+</body>
+</html>

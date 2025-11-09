@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: What is HTML?</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="chapter1.html">Chapter 1</a> |
+            <a href="chapter3.html">Chapter 3</a> |
+            <a href="chapter4.html">Chapter 4</a> |
+            <a href="chapter5.html">Chapter 5</a> |
+            <a href="chapter6.html">Chapter 6</a>
+        </nav>
+        
+        <hr>
+        <h1>Chapter 2: What is HTML? - The Skeleton of the Web 🦴</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>HyperText Markup Language</h2>
+            <figure>
+                <img src="assests/images/chapter2/html skleton.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+            
+            </figure>
+            <p>HTML is the standard language used to create web pages. It's not a programming language; it's a <strong>markup language</strong>. This means it uses tags to "mark up" or structure the content, telling the browser how to display text, images, and other elements.</p>
+            <ul>
+                <li><strong>HyperText:</strong> Refers to the "links" that connect web pages to one another, allowing the user to navigate.</li>
+                <li><strong>Markup:</strong> Refers to the tags used to define the structure and meaning of the content.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Fundamental Content Tags</h2>
+            
+            <h3>Headings (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>)</h3>
+            <p>Headings are used to define a hierarchy of importance for titles and subtitles on a page. Search engines use them to understand the structure of your content.</p>
+            <h1>This is an H1 heading (Most Important)</h1>
+            <h2>This is an H2 heading</h2>
+            <h3>This is an H3 heading</h3>
+            <h4>This is an H4 heading</h4>
+            <h5>This is an H5 heading</h5>
+            <h6>This is an H6 heading (Least Important)</h6>
+            <blockquote><strong>Best Practice:</strong> Use only one <code>&lt;h1&gt;</code> per page for the main title. Don't skip heading levels (e.g., don't go from an <code>&lt;h2&gt;</code> to an <code>&lt;h4&gt;</code>).</blockquote>
+
+            <h3>Paragraphs (<code>&lt;p&gt;</code>)</h3>
+            <p>The <code>&lt;p&gt;</code> tag is used to group text into paragraphs. The browser automatically adds some space before and after each paragraph.</p>
+            <p>This is the first paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>This is the second paragraph. It is separate from the first one.</p>
+            
+            <h3>Breaks (<code>&lt;br&gt;</code>) and Horizontal Rules (<code>&lt;hr&gt;</code>)</h3>
+            <p>These are "self-closing" tags.</p>
+            <ul>
+                <li>The <code>&lt;br&gt;</code> tag creates a line break.<br>As you can see, this text is on a new line.</li>
+                <li>The <code>&lt;hr&gt;</code> tag creates a thematic break or a horizontal rule, often used to separate sections of content.</li>
+            </ul>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Lists: Organizing Information</h2>
+
+            <h3>Unordered List (<code>&lt;ul&gt;</code>)</h3>
+            <figure>
+                <img src="assests/images/chapter2/ul.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+            
+            </figure>
+            <p>Used for lists where the order of items does not matter. It uses bullet points by default.</p>
+            <ul>
+                <li>Milk</li>
+                <li>Tea Leaves</li>
+                <li>Sugar</li>
+            </ul>
+            
+            <h3>Ordered List (<code>&lt;ol&gt;</code>)</h3>
+            <figure>
+                <img src="assests/images/chapter2/ol.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+            
+            </figure>
+            <p>Used for lists where the order is important, like a recipe or a ranking. It uses numbers by default.</p>
+            <ol>
+                <li>Boil water.</li>
+                <li>Add tea leaves.</li>
+                <li>Add milk and sugar.</li>
+            </ol>
+        </section>
+        
+        <hr>
+
+        <section>
+            <h2>Links and Images</h2>
+
+            <h3>Anchor Tag (<code>&lt;a&gt;</code>)</h3>
+            <figure>
+                <img src="assests/images/chapter2/arc.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+            
+            </figure>
+            <p>The anchor tag is used to create hyperlinks. The <code>href</code> attribute specifies the destination URL.</p>
+            <p>Visit the main page of our project: <a href="index.html">Go to Home</a>.</p>
+            <p>To open a link in a new tab, use the <code>target="_blank"</code> attribute: <a href="https://google.com" target="_blank">Search on Google</a>.</p>
+
+            <h3>Image Tag (<code>&lt;img&gt;</code>)</h3>
+            <figure>
+                <img src="assests/images/chapter2/img.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+            
+            </figure>
+            <p>The image tag is used to embed an image. It is a self-closing tag and requires the <code>src</code> (source) and <code>alt</code> (alternative text) attributes.</p>
+            
+            <figure>
+                <img src="assets/images/project_image.jpg" alt="A developer working on a laptop with code on the screen." width="400" height="250">
+                <figcaption>
+                    <strong>Best Practice:</strong> The <code>alt</code> text is crucial for accessibility. It describes the image for screen readers used by visually impaired users and is displayed if the image fails to load. The <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> tags are used to semantically group an image with its caption.
+                </figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <hr>
+    <footer>
+        <p>&copy; 2025 Coder Army Hackathon. Project by Adarsh Singh</p>
+    </footer>
+</body>
+</html>

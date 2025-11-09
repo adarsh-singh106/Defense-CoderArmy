@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: The Internet Basics</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="chapter2.html">Chapter 2</a> |
+            <a href="chapter3.html">Chapter 3</a> |
+            <a href="chapter4.html">Chapter 4</a> |
+            <a href="chapter5.html">Chapter 5</a> |
+            <a href="chapter6.html">Chapter 6</a>
+        </nav>
+        <hr>
+        <h1>Chapter 1: The Beginning - How the Internet Works 🌐</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>What is the Internet?</h2>
+
+            <figure>
+                <img src="assests/images/chapter1/internet.png" alt="Illustration of the Internet" width="250"
+                    height="250" title="The Internet - Global Network">
+                <figcaption><em>The Internet: A global network of connected computers.</em></figcaption>
+            </figure>
+
+            <p>Before diving into web development, we must understand the internet. Think of it as a global network of
+                computers that communicate with each other. The core purpose is <strong>communication and data
+                    transfer</strong>. It's like a giant digital post office system.</p>
+        </section>
+
+
+        <hr>
+
+        <section>
+            <h2>The "Post Office" Analogy</h2>
+            <figure>
+                <img src="assests/images/chapter1/PostOffice.png" alt="Illustration of the Internet" width="250"
+                    height="250" title="The Internet - Global Network">
+                <figcaption><em>The Internet: A global network of connected computers.</em></figcaption>
+            </figure>
+            <p>Sending data online is very similar to sending a parcel:</p>
+            <ol>
+                <li><strong>The Parcel:</strong> This is your data (a message, a photo, a file).</li>
+                <li><strong>Your Address (Sender):</strong> This is your IP Address.</li>
+                <li><strong>Recipient's Address:</strong> This is the destination IP Address.</li>
+                <li><strong>The Post Office System:</strong> This is the network of routers and cables that figures out
+                    the best path to deliver your data.</li>
+            </ol>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Core Components Explained</h2>
+
+
+            <h3>1. IP Address (Internet Protocol)</h3>
+            <figure>
+                <img src="assests/images/chapter1/IP.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+                <figcaption><em>The Internet: A global network of connected computers.</em></figcaption>
+            </figure>
+
+            <p>An IP address is a unique numerical label assigned to each device connected to a computer network. It's
+                the "home address" for your device on the internet.</p>
+            <ul>
+                <li><strong>IPv4:</strong> The older version, like <code>192.168.1.1</code>. It's a 32-bit number and
+                    can support about 4.3 billion devices. We ran out of these!</li>
+                <li><strong>IPv6:</strong> The new version, like <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>.
+                    It's a 128-bit number that provides a practically infinite number of addresses.</li>
+                <li><strong>Dynamic IP:</strong> Your ISP (Internet Service Provider like Jio, Airtel) gives you a
+                    temporary IP address when you connect to the internet. It can change the next time you connect.</li>
+            </ul>
+
+            <h3>2. MAC Address (Media Access Control)</h3>
+            <figure>
+                <img src="assests/images/chapter1/MAC-ADD.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+                <figcaption><em>The Internet: A global network of connected computers.</em></figcaption>
+            </figure>
+            <p>This is the <strong>permanent, physical address</strong> of your device's network hardware (like your
+                WiFi card). It's burned into the device by the manufacturer and cannot be changed easily. While your IP
+                address is like your temporary home address, the MAC address is like your government ID number - it's
+                uniquely yours.</p>
+            <blockquote>
+                <strong>Why do we need both?</strong> If your internet disconnects and your IP is given to someone else
+                (like your dad's phone!), the MAC address ensures that sensitive data meant for you (like Anjali's chat
+                😉) doesn't get delivered to him, because the delivery packet checks both the IP and the MAC address.
+            </blockquote>
+
+            <h3>3. DNS (Domain Name System)</h3>
+            <figure>
+                <img src="assests/images/chapter1/DNS.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+                <figcaption><em>The Internet: A global network of connected computers.</em></figcaption>
+            </figure>
+            <p>Humans are bad at remembering numbers (IP addresses). We're good with names (like
+                <code>google.com</code>). The DNS is the "phonebook of the internet." When you type a domain name into
+                your browser:
+            </p>
+            <ol>
+                <li>Your computer asks a DNS server, "What is the IP address for google.com?"</li>
+                <li>The DNS server looks it up and replies, "The IP is <code>142.250.196.78</code>."</li>
+                <li>Your browser then connects to that IP address to get the website.</li>
+            </ol>
+
+            <h3>4. Port Numbers</h3>
+            <figure>
+                <img src="assests/images/chapter1/POrt NO.png" alt="Illustration of the Internet" width="250" height="250"
+                    title="The Internet - Global Network">
+                <figcaption><em>The Internet: A global network of connected computers.</em></figcaption>
+            </figure>
+            <p>An IP address gets data to the right <em>device</em>, but a port number gets it to the right
+                <em>application</em> on that device. Your computer can run many things at once (Chrome, WhatsApp,
+                Spotify). A port number is like an apartment number in a building.
+            </p>
+            <ul>
+                <li><strong>Port 80:</strong> For standard web traffic (HTTP).</li>
+                <li><strong>Port 443:</strong> For secure web traffic (HTTPS).</li>
+                <li>When you open multiple tabs in Chrome, each tab is assigned a temporary, high-numbered port to keep
+                    the data separate.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <hr>
+    <footer>
+        <p>&copy; 2025 Coder Army Hackathon. Project by Adarsh Singh</p>
+    </footer>
+
+</body>
+
+</html>

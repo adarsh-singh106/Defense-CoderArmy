@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Forms</title>
+</head>
+<body>
+    <h1>Chapter 5: Collecting User Data with Forms</h1>
+    <hr>
+
+    <h2>The &lt;form&gt; Element</h2>
+    <p>The <code>&lt;form&gt;</code> element is a container for different types of input elements, such as text fields, checkboxes, radio buttons, submit buttons, etc.</p>
+    <p>The <code>action</code> attribute defines where the form data is sent when submitted (usually a backend URL), and the <code>method</code> attribute defines the HTTP method (GET or POST).</p>
+    
+    <form action="#">
+        <h2>Registration Form Example</h2>
+        <hr>
+        
+        <p>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="e.g., Arjun Sharma" required>
+        </p>
+        
+        <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required>
+        </p>
+
+        <p>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required>
+        </p>
+
+        <p>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" min="18">
+        </p>
+        
+        <p>
+            Gender:<br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+        </p>
+
+        <p>
+            Interests:<br>
+            <input type="checkbox" id="coding" name="interests" value="coding">
+            <label for="coding">Coding</label><br>
+            <input type="checkbox" id="music" name="interests" value="music">
+            <label for="music">Music</label><br>
+        </p>
+
+        <p>
+            <label for="course">Select Course:</label><br>
+            <select id="course" name="course">
+                <option value="cse">Computer Science</option>
+                <option value="mech">Mechanical</option>
+                <option value="civil">Civil</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="30"></textarea>
+        </p>
+        
+        <p>
+            <button type="submit">Register</button>
+            <button type="reset">Clear Form</button>
+        </p>
+
+    </form>
+    <hr>
+    
+    <h3>Key Attributes Explained:</h3>
+    <ul>
+        <li><strong>label for="..."</strong>: Connects a label with a specific input field (matches the input's <code>id</code>). Clicking the label will focus the input field.</li>
+        <li><strong>input id="..."</strong>: A unique ID for the input, used by the label.</li>
+        <li><strong>input name="..."</strong>: This is crucial! The <code>name</code> is sent to the backend as the key for the data. E.g., <code>username=Rohit</code>.</li>
+        <li><strong>input placeholder="..."</strong>: Provides a hint to the user about what to enter.</li>
+        <li><strong>input value="..."</strong>: The actual data associated with an input (especially important for radio buttons and checkboxes).</li>
+        <li><strong>input required</strong>: Makes the field mandatory. The form won't submit if it's empty.</li>
+    </ul>
+    <hr>
+
+    <a href="index.html"><button>Back to Home</button></a>
+</body>
+</html>

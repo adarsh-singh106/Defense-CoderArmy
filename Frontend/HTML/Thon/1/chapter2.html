@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: What is HTML?</title>
+</head>
+<body>
+    <h1>Chapter 2: What is HTML (HyperText Markup Language)?</h1>
+    <hr>
+
+    <h2>HTML is the Skeleton</h2>
+    <p>HTML is <strong>not</strong> a programming language. It's a <strong>markup language</strong>. Its job is to give structure and meaning to the content of a webpage. Think of it as the skeleton of a human body. It provides the basic structure, but it's not styled (that's CSS) and it doesn't have functionality (that's JavaScript).</p>
+    <hr>
+
+    <h2>Basic Tags</h2>
+    <h3>Headings (h1 to h6)</h3>
+    <p>Headings are used to define the importance of a title. <code>&lt;h1&gt;</code> is the most important (usually the main title of a page), and <code>&lt;h6&gt;</code> is the least important.</p>
+    <h1>This is an h1 heading.</h1>
+    <h2>This is an h2 subheading.</h2>
+    <h3>This is an h3 subheading.</h3>
+    <hr>
+    
+    <h3>Paragraphs (&lt;p&gt;)</h3>
+    <p>The paragraph tag is used for blocks of text, like the one you are reading right now.</p>
+    <p>This is another paragraph. Each 'p' tag creates a new block of text with some space around it.</p>
+    <hr>
+
+    <h3>Line Breaks (&lt;br&gt;) and Horizontal Rules (&lt;hr&gt;)</h3>
+    <p>A <code>&lt;br&gt;</code> tag creates a line break.<br>As you can see, this text is on a new line.<br>It's a self-closing tag.</p>
+    <p>An <code>&lt;hr&gt;</code> tag creates a thematic break or a horizontal line, like the ones used to separate sections on this page. It is also self-closing.</p>
+    <hr>
+
+    <h2>Lists</h2>
+    <h3>Unordered List (&lt;ul&gt;)</h3>
+    <p>Used for lists where the order doesn't matter. It uses bullet points.</p>
+    <ul>
+        <li>Milk</li>
+        <li>Bread</li>
+        <li>Sugar</li>
+    </ul>
+
+    <h3>Ordered List (&lt;ol&gt;)</h3>
+    <p>Used for lists where the order is important, like steps in a recipe. It uses numbers.</p>
+    <ol>
+        <li>Boil water.</li>
+        <li>Add tea leaves.</li>
+        <li>Add milk and sugar.</li>
+    </ol>
+    <hr>
+
+    <h2>Anchor Tag (&lt;a&gt;) - Creating Links</h2>
+    <p>The anchor tag is used to create hyperlinks to other pages or websites. The <code>href</code> attribute specifies the destination URL.</p>
+    <a href="https://www.google.com">Click here to visit Google</a>
+    <br>
+    <a href="chapter1.html">Click here to go back to Chapter 1</a>
+    <hr>
+
+    <h2>Image Tag (&lt;img&gt;)</h2>
+    <p>The image tag is used to embed an image on a page. It is self-closing. The <code>src</code> attribute specifies the path to the image, and the <code>alt</code> attribute provides alternative text if the image cannot be displayed.</p>
+    <p><strong>Note:</strong> Since we can't include actual images in this HTML-only project without a file structure, here is how the code would look:</p>
+    <pre><code>&lt;img src="path/to/your/image.jpg" alt="A descriptive text for the image" width="200"&gt;</code></pre>
+    <hr>
+
+    <a href="index.html"><button>Back to Home</button></a>
+</body>
+</html>

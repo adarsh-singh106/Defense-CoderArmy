@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Boilerplate & Fundamentals</title>
+</head>
+<body>
+    <h1>Chapter 4: HTML Boilerplate & Key Fundamentals</h1>
+    <hr>
+
+    <h2>File Path System</h2>
+    <p>File paths tell the browser where to find files (like images, stylesheets, or other HTML pages). There are two types:</p>
+    <ul>
+        <li>
+            <strong>Absolute Path:</strong> A full URL to a file hosted on the internet. It starts with <code>https://</code>. This is used for external resources.
+            <br>
+            <em>Example: <code>&lt;img src="https://www.google.com/images/logo.png"&gt;</code></em>
+        </li>
+        <li>
+            <strong>Relative Path:</strong> A path to a file relative to the current page's location. This is used for internal files within your project.
+            <ul>
+                <li><code>image.jpg</code>: The file is in the same folder.</li>
+                <li><code>images/image.jpg</code>: The file is in an 'images' folder at the same level.</li>
+                <li><code>../image.jpg</code>: The file is in the parent folder (one level up).</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    
+    <h2>The HTML Boilerplate Explained</h2>
+    <p>The boilerplate is the standard, essential code required for every HTML page to work correctly across different browsers.</p>
+    <pre>
+<code>&lt;!DOCTYPE html&gt;</code>
+<code>&lt;html lang="en"&gt;</code>
+<code>&lt;head&gt;</code>
+<code>    &lt;meta charset="UTF-8"&gt;</code>
+<code>    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+<code>    &lt;title&gt;Document&lt;/title&gt;</code>
+<code>&lt;/head&gt;</code>
+<code>&lt;body&gt;</code>
+<code>    ... your content here ...</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code>
+    </pre>
+    <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code>: Declares that this document is an HTML5 document.</li>
+        <li><code>&lt;html lang="en"&gt;</code>: The root element of the page. <code>lang="en"</code> specifies the page language as English.</li>
+        <li><code>&lt;head&gt;</code>: Contains meta-information about the document (data about data). This is not displayed on the page.</li>
+        <li><code>&lt;meta charset="UTF-8"&gt;</code>: Specifies the character encoding for the document. UTF-8 includes almost all characters and symbols in the world.</li>
+        <li><code>&lt;meta name="viewport" ...&gt;</code>: Makes the website responsive, ensuring it looks good on all devices (desktops, tablets, and phones).</li>
+        <li><code>&lt;title&gt;</code>: The title of the page, which appears in the browser tab.</li>
+        <li><code>&lt;body&gt;</code>: Contains the visible content of the webpage. Everything you see is inside the body tag.</li>
+    </ul>
+    <hr>
+    
+    <h2>Div, Class, and ID</h2>
+    <h3>Div (&lt;div&gt;) - The Container</h3>
+    <p>A <code>&lt;div&gt;</code> is a generic container element. It doesn't do anything on its own, but it's used to group other elements together. This is extremely useful for applying styles (with CSS) or manipulating a group of elements at once (with JavaScript). <strong>Hinglish Mnemonic:</strong> <em>Div ek 'dabba' hai jisme aap kuch bhi daal sakte ho.</em></p>
+    
+    <h3>Class and ID - Selectors</h3>
+    <p>Class and ID are attributes you can add to any HTML element to identify them. This is crucial for CSS and JavaScript.</p>
+    <ul>
+        <li>
+            <strong>Class:</strong> Used to group multiple elements. The same class name can be used on many elements. Think of it as labeling all students in the 'Frontend' batch.
+            <br>
+            <em>Example: <code>&lt;p class="highlight"&gt;...&lt;/p&gt;</code> and <code>&lt;h2 class="highlight"&gt;...&lt;/h2&gt;</code></em>
+        </li>
+        <li>
+            <strong>ID:</strong> Used to identify a <strong>single, unique</strong> element. An ID name must be unique within the entire page. Think of it as a student's unique roll number.
+            <br>
+            <em>Example: <code>&lt;div id="main-header"&gt;...&lt;/div&gt;</code></em>
+        </li>
+    </ul>
+    <hr>
+
+    <a href="index.html"><button>Back to Home</button></a>
+</body>
+</html>

@@ -1,0 +1,135 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: What is HTML?</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="chapter1.html">Chapter 1</a> |
+            <a href="chapter2.html">Chapter 2</a> |
+            <a href="chapter4.html">Chapter 4</a> |
+            <a href="chapter5.html">Chapter 5</a> |
+            <a href="chapter6.html">Chapter 6</a>
+        </nav>
+        
+        <hr>
+        <h1>Chapter 3: Nested Lists & HTML Tables</h1>
+    </header>
+
+    <main>
+    <section>
+        <h2>Nested Lists</h2>
+        <p>A nested list is a list inside another list. You can create complex hierarchical structures by placing a <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> inside an <code>&lt;li&gt;</code> element.</p>
+        
+        <h3>Example: Course Outline</h3>
+        <ul>
+            <li>
+                <strong>Frontend Development</strong>
+                <ol>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>
+                        JavaScript
+                        <ul>
+                            <li>DOM Manipulation</li>
+                            <li>Asynchronous JS (Promises, async/await)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <strong>Backend Development</strong>
+                <ol>
+                    <li>Node.js & Express</li>
+                    <li>Databases
+                        <ul>
+                            <li>MongoDB (NoSQL)</li>
+                            <li>PostgreSQL (SQL)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>HTML Tables</h2>
+        <p>Tables are used to display data in a structured, grid-like format of rows and columns.</p>
+        
+        <h3>Basic Table Structure</h3>
+        <ul>
+            <li><strong><code>&lt;table&gt;</code>:</strong> The container for the entire table.</li>
+            <li><strong><code>&lt;tr&gt;</code> (Table Row):</strong> Defines a row in the table.</li>
+            <li><strong><code>&lt;th&gt;</code> (Table Header):</strong> Defines a header cell. Text is bold and centered by default.</li>
+            <li><strong><code>&lt;td&gt;</code> (Table Data):</strong> Defines a standard data cell.</li>
+        </ul>
+        
+        <h3>Advanced Structure & Spanning</h3>
+        <p>For more complex and semantically correct tables, we use additional tags and attributes:</p>
+        <ul>
+            <li><strong><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>:</strong> These tags group the header, body, and footer content of a table, respectively. They improve accessibility and code organization.</li>
+            <li><strong><code>colspan</code>:</strong> An attribute to make a cell span across multiple columns.</li>
+            <li><strong><code>rowspan</code>:</strong> An attribute to make a cell span across multiple rows.</li>
+        </ul>
+
+        <h3>Example: Weekly Class Schedule</h3>
+        <table border="1" cellpadding="10" cellspacing="0" width="80%">
+            <caption><strong>Coder Army Weekly Schedule</strong></caption>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9:00 AM - 11:00 AM</td>
+                    <td>HTML Basics</td>
+                    <td>Advanced HTML</td>
+                    <td>CSS Basics</td>
+                    <td>Advanced CSS</td>
+                    <td>Flexbox & Grid</td>
+                </tr>
+                <tr>
+                    <td>11:00 AM - 1:00 PM</td>
+                    <td colspan="5"><strong>Project Work & Self-Study Break</strong></td>
+                </tr>
+                <tr>
+                    <td>1:00 PM - 3:00 PM</td>
+                    <td rowspan="2">JavaScript Fundamentals</td>
+                    <td>DOM Manipulation</td>
+                    <td rowspan="2">JavaScript Advanced Topics</td>
+                    <td>API Fetching</td>
+                    <td rowspan="2">React Intro</td>
+                </tr>
+                <tr>
+                    <td>3:00 PM - 5:00 PM</td>
+                    <td>Event Handling</td>
+                    <td>React Hooks</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">All sessions are recorded and will be available after class.</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+</main>
+
+<hr>
+<footer>
+    <p>&copy; 2025 Coder Army Hackathon. Project by Adarsh Singh</p>
+</footer> 
+</body>
+</html>

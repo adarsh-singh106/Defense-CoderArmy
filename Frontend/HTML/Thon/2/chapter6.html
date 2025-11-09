@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Media & Deployment</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="chapter1.html">Chapter 1</a> |
+            <a href="chapter2.html">Chapter 2</a> |
+            <a href="chapter3.html">Chapter 3</a> |
+            <a href="chapter4.html">Chapter 4</a> |
+            <a href="chapter5.html">Chapter 5</a>
+        </nav>
+        <hr>
+        <h1>Chapter 6: The Final Arc - Media and Deployment 🎬🚀</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Embedding Media</h2>
+            <p>HTML provides tags to natively embed audio and video content directly into your web pages.</p>
+            
+            <h3>The Audio Tag (<code>&lt;audio&gt;</code>)</h3>
+            <p>Used to embed sound content. The <code>controls</code> attribute is essential to show the play/pause/volume controls to the user.</p>
+            <audio controls>
+                <source src="assests/media/ruko jara bahuu.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <blockquote><strong>Best Practice:</strong> Use the <code>&lt;source&gt;</code> tag inside the audio tag. This allows you to provide multiple audio formats (e.g., .mp3, .ogg). The browser will use the first one it supports.</blockquote>
+
+            <h3>The Video Tag (<code>&lt;video&gt;</code>)</h3>
+            <p>Used to embed video content. It has several useful attributes:</p>
+            <ul>
+                <li><strong><code>controls</code>:</strong> Shows the default video controls.</li>
+                <li><strong><code>width</code>/<code>height</code>:</strong> Sets the size of the video player.</li>
+                <li><strong><code>autoplay</code>:</strong> Starts the video automatically. <strong>Note:</strong> Most modern browsers require the <code>muted</code> attribute to be present for autoplay to work.</li>
+                <li><strong><code>muted</code>:</strong> Mutes the audio by default.</li>
+                <li><strong><code>loop</code>:</strong> Makes the video loop back to the beginning when it ends.</li>
+            </ul>
+            <video width="480" controls muted>
+                <source src="assests/media/VN20250530_084041.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Embedding External Content with iFrames</h2>
+            <p>An <code>&lt;iframe&gt;</code> (Inline Frame) is used to embed another HTML document within the current one. This is most commonly used to embed content from other websites, like YouTube videos or Google Maps.</p>
+
+            <h3>Example: Embedding a YouTube Video</h3>
+            <p>To embed a YouTube video, go to the video, click "Share," then "Embed," and copy the provided iframe code. The URL must be the "embed" version, not the regular "watch" version.</p>
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/eUfzneMLOcY" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        <hr>
+        
+        <section>
+            <h2>Building a Multi-Page Website</h2>
+            <p>A multi-page website is exactly what it sounds like: a site made of multiple linked HTML files. This entire hackathon project is a multi-page website!</p>
+            
+            <h3>The Core Concept:</h3>
+            <ol>
+                <li><strong>Create Separate HTML Files:</strong> Each "page" of your site (Home, About, Contact, etc.) is its own <code>.html</code> file. In our project, these are <code>index.html</code>, <code>chapter1.html</code>, etc.</li>
+                <li><strong>Create a Consistent Navigation:</strong> Use a <code>&lt;nav&gt;</code> element on every page. Inside the nav, use anchor tags (<code>&lt;a&gt;</code>) with <strong>relative paths</strong> to link to your other HTML files.</li>
+                <li><strong>Maintain a Consistent Structure:</strong> Use the same <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> across all pages to give your site a unified look and feel.</li>
+            </ol>
+            <p>By clicking the navigation links at the top of this page, you are actively using a multi-page website structure.</p>
+        </section>
+        
+        <hr>
+
+        <section>
+            <h2>Deployment: Making Your Website Live</h2>
+            <p>Deployment is the process of taking your local project files and putting them on a web server so that anyone in the world can access them through a public URL.</p>
+
+            <h3>How it Works (Simplified):</h3>
+            <ol>
+                <li><strong>Gather Your Project Files:</strong> This includes all your HTML files, images, videos, and any other assets, all organized in a single folder (like our <code>HACKATHON_PROJECT</code> folder).</li>
+                <li><strong>Choose a Hosting Platform:</strong> There are many free and easy-to-use platforms for static sites (sites made of only HTML, CSS, and JS). <strong>Netlify</strong> and <strong>Vercel</strong> are extremely popular.</li>
+                <li><strong>Upload Your Folder:</strong> These platforms often have a simple drag-and-drop interface. You just drag your entire project folder onto their website.</li>
+                <li><strong>Done!</strong> The platform automatically builds and deploys your site, giving you a unique URL (like <code>my-first-project.netlify.app</code>) that you can share with anyone.</li>
+            </ol>
+            <p>That's it! They handle all the complex server configuration, security (HTTPS), and provide a link to your live, multi-page, static website.</p>
+        </section>
+
+    </main>
+
+    <hr>
+    <footer>
+        <p>&copy; 2025 Coder Army Hackathon. Project by Adarsh Singh</p>
+    </footer>
+</body>
+</html>

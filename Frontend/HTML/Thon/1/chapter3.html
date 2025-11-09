@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Nested Lists & Tables</title>
+</head>
+<body>
+    <h1>Chapter 3: Organizing Data with Nested Lists & Tables</h1>
+    <hr>
+
+    <h2>Nested Lists</h2>
+    <p>A nested list is simply a list inside another list. This is useful for creating outlines or hierarchical structures.</p>
+    <h3>Example: Countries and Cities</h3>
+    <ul>
+        <li>
+            India
+            <ul>
+                <li>Delhi</li>
+                <li>Mumbai</li>
+                <li>Goa</li>
+            </ul>
+        </li>
+        <li>
+            USA
+            <ol>
+                <li>New York</li>
+                <li>California</li>
+            </ol>
+        </li>
+    </ul>
+    <hr>
+
+    <h2>HTML Tables</h2>
+    <p>Tables are used to display data in a structured, grid-like format of rows and columns.</p>
+    <h3>Basic Table Structure:</h3>
+    <ul>
+        <li><code>&lt;table&gt;</code>: The container for the entire table. The <code>border="1"</code> attribute adds a simple border.</li>
+        <li><code>&lt;tr&gt;</code>: Table Row. Defines a row of cells.</li>
+        <li><code>&lt;th&gt;</code>: Table Header. Defines a header cell. Text is typically bold and centered.</li>
+        <li><code>&lt;td&gt;</code>: Table Data. Defines a standard data cell.</li>
+    </ul>
+
+    <h3>Example: Student Information</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Project</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rohit</td>
+                <td>Frontend Developer</td>
+                <td>Notes Website</td>
+            </tr>
+            <tr>
+                <td>Mohit</td>
+                <td>Backend Developer</td>
+                <td>API Service</td>
+            </tr>
+            <tr>
+                <td>Anjali</td>
+                <td>Full-Stack Developer</td>
+                <td>E-commerce Platform</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><i>This is a list of top students.</i></td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+    
+    <h2>Advanced Tables: Rowspan and Colspan</h2>
+    <p>These attributes allow you to merge cells across multiple rows or columns.</p>
+    <ul>
+        <li><strong>colspan</strong>: Merges a cell with cells to its right (horizontally).</li>
+        <li><strong>rowspan</strong>: Merges a cell with cells below it (vertically).</li>
+    </ul>
+
+    <h3>Example: Schedule</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>9 AM - 11 AM</td>
+                <td rowspan="2">HTML Lecture</td>
+                <td>Data Structures</td>
+            </tr>
+            <tr>
+                <td>11 AM - 12 PM</td>
+                <td>Project Work</td>
+            </tr>
+            <tr>
+                <td>12 PM - 1 PM</td>
+                <td colspan="2" align="center"><b>Lunch Break</b></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <a href="index.html"><button>Back to Home</button></a>
+</body>
+</html>
