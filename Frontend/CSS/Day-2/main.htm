@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CSS Box Model — Interactive Practice</title>
+  <style>
+    :root{
+      --demo-bg: #f7f9fc;
+      --accent: #2563eb;
+      --muted: #6b7280;
+    }
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--demo-bg); color:#111; margin:0; padding:24px;}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+    header h1{font-size:18px;margin:0}
+    .layout{display:grid;grid-template-columns:360px 1fr;gap:20px}
+    .panel{background:#fff;border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .controls{max-height:76vh;overflow:auto}
+    label{display:flex;justify-content:space-between;align-items:center;margin:8px 0;font-size:13px;color:var(--muted)}
+    input[type=range]{width:100%}
+    select,input[type=number]{width:100%;padding:6px;border-radius:6px;border:1px solid #e6e9ef}
+
+    /* Demo area */
+    .stage{min-height:80vh;display:flex;flex-direction:column;gap:16px}
+    .demo-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+    .box-inspector{font-family:monospace;background:#0f1724;color:#e6eef8;padding:8px;border-radius:8px}
+
+    /* The box we will style */
+    .demo-box-wrap{display:flex;align-items:center;justify-content:center;min-height:200px;border:1px dashed #e2e8f0;border-radius:8px;background:linear-gradient(180deg,#ffffff, #fbfcfe)}
+    .demo-box{
+      background:#fff;
+      min-width:40px;min-height:40px;
+      display:block;
+      text-align:center;
+      font-size:14px;
+      line-height:1;
+      overflow:hidden;
+    }
+
+    /* Examples showing inline vs block */
+    .inline-ex {background:#fff;padding:8px;border-radius:8px}
+    .inline-ex span{display:inline-block;padding:6px;border:1px solid #e5e7eb;margin-right:6px}
+
+    footer{margin-top:12px;color:var(--muted);font-size:13px}
+
+    /* Small helpers */
+    .note{font-size:13px;color:var(--muted);}
+    .row{display:flex;gap:8px}
+    .kbd{background:#111;color:#fff;padding:2px 6px;border-radius:6px;font-size:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Box Model — Interactive Practice</h1>
+    <div class="note">Adjust controls to see live changes. Use DevTools (F12) to inspect computed box model.</div>
+  </header>
+
+  <div class="layout">
+    <aside class="panel controls">
+      <h3>Controls (timestamps included)</h3>
+      <p class="note">Follow the timestamps from your list while trying each control:</p>
+      <ol>
+        <li>0:50 CSS Box Model</li>
+        <li>2:51 Content: Height &amp; Width</li>
+        <li>4:05 Border: Width, Style &amp; Color</li>
+        <li>6:20 Shorthand Notation</li>
+        <li>7:40 Padding</li>
+        <li>8:57 Margin</li>
+        <li>18:07 / 18:44 / 21:03 Border/ Padding/ Margin sides</li>
+        <li>23:57 Border Radius</li>
+        <li>24:46 Inline vs Block / 26:12 span Tag</li>
+        <li>45:03 Box-Sizing</li>
+        <li>50:02 Wrapping Up</li>
+      </ol>
+
+      <hr>
+      <label>Width <span id="lblWidth">200px</span></label>
+      <input type="range" id="width" min="20" max="800" value="200">
+
+      <label>Height <span id="lblHeight">120px</span></label>
+      <input type="range" id="height" min="20" max="600" value="120">
+
+      <label>Padding (all) <span id="lblPadding">12px</span></label>
+      <input type="range" id="padding" min="0" max="80" value="12">
+
+      <label>Padding (top) <span id="lblPadTop">12px</span></label>
+      <input type="range" id="padTop" min="0" max="80" value="12">
+      <label>Padding (right) <span id="lblPadR">12px</span></label>
+      <input type="range" id="padR" min="0" max="80" value="12">
+      <label>Padding (bottom) <span id="lblPadB">12px</span></label>
+      <input type="range" id="padB" min="0" max="80" value="12">
+      <label>Padding (left) <span id="lblPadL">12px</span></label>
+      <input type="range" id="padL" min="0" max="80" value="12">
+
+      <hr>
+      <label>Margin (all) <span id="lblMargin">12px</span></label>
+      <input type="range" id="margin" min="-50" max="120" value="12">
+
+      <label>Margin (top) <span id="lblMarTop">12px</span></label>
+      <input type="range" id="marTop" min="-50" max="120" value="12">
+      <label>Margin (right) <span id="lblMarR">12px</span></label>
+      <input type="range" id="marR" min="-50" max="120" value="12">
+      <label>Margin (bottom) <span id="lblMarB">12px</span></label>
+      <input type="range" id="marB" min="-50" max="120" value="12">
+      <label>Margin (left) <span id="lblMarL">12px</span></label>
+      <input type="range" id="marL" min="-50" max="120" value="12">
+
+      <hr>
+      <label>Border width <span id="lblBw">4px</span></label>
+      <input type="range" id="bwidth" min="0" max="40" value="4">
+      <label>Border style</label>
+      <select id="bstyle">
+        <option>solid</option>
+        <option>dashed</option>
+        <option>dotted</option>
+        <option>double</option>
+        <option>groove</option>
+        <option>none</option>
+      </select>
+      <label>Border color</label>
+      <input type="color" id="bcolor" value="#2563eb">
+
+      <label>Border radius <span id="lblBr">8px</span></label>
+      <input type="range" id="bradius" min="0" max="100" value="8">
+
+      <hr>
+      <label>Box-sizing</label>
+      <select id="boxsizing">
+        <option value="content-box">content-box</option>
+        <option value="border-box" selected>border-box</option>
+      </select>
+
+      <label>Display</label>
+      <select id="displayProp">
+        <option value="block">block</option>
+        <option value="inline">inline</option>
+        <option value="inline-block" selected>inline-block</option>
+      </select>
+
+      <label>Shorthand (margin vertical horizontal)</label>
+      <div style="display:flex;gap:8px"><input id="shMv" type="number" placeholder="vertical"/><input id="shMh" type="number" placeholder="horizontal"/><button id="applyShort">Apply</button></div>
+
+      <hr>
+      <h4>Quick examples</h4>
+      <button id="reset">Reset</button>
+      <button id="exampleInline">Show Inline vs Block</button>
+      <p class="note">Tip: Open DevTools → select the .demo-box → in computed styles look at margin / border / padding sizes to understand box model.</p>
+    </aside>
+
+    <main class="panel stage">
+      <section>
+        <h2>Live demo (try resizing controls)</h2>
+        <div class="demo-row">
+          <div class="demo-box-wrap" id="wrap">
+            <div class="demo-box" id="box">Demo box</div>
+          </div>
+
+          <div style="flex:1;min-width:260px">
+            <h3>Computed values</h3>
+            <pre class="box-inspector" id="inspector">width: --
+height: --
+padding: --
+border: --
+margin: --
+box-sizing: --
+display: --
+</pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Inline vs Block / span tag</h3>
+        <div class="inline-ex panel">
+          <div>Default block elements (each on new line):</div>
+          <div style="margin-top:8px">
+            <div style="border:1px solid #e6eef8;padding:6px">Block 1 (div)</div>
+            <div style="border:1px solid #e6eef8;padding:6px;margin-top:6px">Block 2 (div)</div>
+          </div>
+          <div style="margin-top:12px">Default inline elements (span) inside text:</div>
+          <p style="margin-top:8px">This is <span style="border:1px solid #ddd;padding:4px">a span</span> and <span style="border:1px solid #ddd;padding:4px">another span</span> in the same line.</p>
+          <div style="margin-top:12px">Try switching display from the controls to see how it affects the demo box.</div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Shorthand examples &amp; notes</h3>
+        <div style="background:#fff;padding:12px;border-radius:8px">
+          <p><strong>Shorthand margin/padding:</strong> <code>margin: top right bottom left</code> or <code>margin: vertical horizontal</code> or <code>margin: all</code></p>
+          <p><strong>Border shorthand:</strong> <code>border: 2px solid #000</code> (width style color)</p>
+          <p><strong>Box-sizing difference:</strong></p>
+          <ul>
+            <li><code>content-box</code> - width/height apply to content only.</li>
+            <li><code>border-box</code> - width/height include padding + border.</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        <div>Inspect tool quick tips: press <span class="kbd">F12</span> or <span class="kbd">Ctrl+Shift+I</span>, then select the element picker (top-left) and click the demo box. Look at <em>Computed</em> panel to see the box model diagram.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // elements
+    const box = document.getElementById('box');
+    const inspector = document.getElementById('inspector');
+    const wrap = document.getElementById('wrap');
+
+    // controls map
+    const qs = id => document.getElementById(id);
+    const controls = ['width','height','padding','padTop','padR','padB','padL','margin','marTop','marR','marB','marL','bwidth','bstyle','bcolor','bradius','boxsizing','displayProp'];
+
+    function px(n){return n+'px'}
+
+    function update(){
+      // sizes
+      const w = qs('width').value;
+      const h = qs('height').value;
+
+      box.style.width = px(w);
+      box.style.height = px(h);
+
+      // padding shorthand vs sides
+      const pAll = qs('padding').value;
+      const pTop = qs('padTop').value;
+      const pR = qs('padR').value;
+      const pB = qs('padB').value;
+      const pL = qs('padL').value;
+      box.style.paddingTop = px(pTop||pAll);
+      box.style.paddingRight = px(pR||pAll);
+      box.style.paddingBottom = px(pB||pAll);
+      box.style.paddingLeft = px(pL||pAll);
+
+      // margin
+      const mAll = qs('margin').value;
+      box.style.marginTop = px(qs('marTop').value || mAll);
+      box.style.marginRight = px(qs('marR').value || mAll);
+      box.style.marginBottom = px(qs('marB').value || mAll);
+      box.style.marginLeft = px(qs('marL').value || mAll);
+
+      // border
+      const bw = qs('bwidth').value;
+      const bs = qs('bstyle').value;
+      const bc = qs('bcolor').value;
+      box.style.border = (bs==='none')? 'none' : `${bw}px ${bs} ${bc}`;
+
+      // border-radius
+      box.style.borderRadius = px(qs('bradius').value);
+
+      // box-sizing & display
+      box.style.boxSizing = qs('boxsizing').value;
+      box.style.display = qs('displayProp').value;
+
+      refreshInspector();
+      // update labels
+      qs('lblWidth').textContent = px(w);
+      qs('lblHeight').textContent = px(h);
+      qs('lblPadding').textContent = px(pAll);
+      qs('lblPadTop').textContent = px(pTop||pAll);
+      qs('lblPadR').textContent = px(pR||pAll);
+      qs('lblPadB').textContent = px(pB||pAll);
+      qs('lblPadL').textContent = px(pL||pAll);
+      qs('lblMargin').textContent = px(mAll);
+      qs('lblMarTop').textContent = px(qs('marTop').value || mAll);
+      qs('lblMarR').textContent = px(qs('marR').value || mAll);
+      qs('lblMarB').textContent = px(qs('marB').value || mAll);
+      qs('lblMarL').textContent = px(qs('marL').value || mAll);
+      qs('lblBw').textContent = px(bw);
+      qs('lblBr').textContent = px(qs('bradius').value);
+    }
+
+    function refreshInspector(){
+      const cs = getComputedStyle(box);
+      const w = Math.round(box.getBoundingClientRect().width);
+      const h = Math.round(box.getBoundingClientRect().height);
+      const padding = `${cs.paddingTop} ${cs.paddingRight} ${cs.paddingBottom} ${cs.paddingLeft}`;
+      const border = `${cs.borderTopWidth} ${cs.borderRightWidth} ${cs.borderBottomWidth} ${cs.borderLeftWidth}`;
+      const margin = `${cs.marginTop} ${cs.marginRight} ${cs.marginBottom} ${cs.marginLeft}`;
+      inspector.textContent = `width: ${w}px\nheight: ${h}px\npadding: ${padding}\nborder-width: ${border}\nmargin: ${margin}\nbox-sizing: ${cs.boxSizing}\ndisplay: ${cs.display}`;
+    }
+
+    // add listeners
+    controls.forEach(id=>{
+      const el = qs(id);
+      if(!el) return;
+      el.addEventListener('input', update);
+      el.addEventListener('change', update);
+    });
+
+    // shorthand apply
+    qs('applyShort').addEventListener('click', ()=>{
+      const mv = qs('shMv').value || 0;
+      const mh = qs('shMh').value || 0;
+      box.style.margin = `${mv}px ${mh}px`;
+      // update range controls to reflect
+      qs('margin').value = Number(mv);
+      qs('marTop').value = Number(mv);
+      qs('marR').value = Number(mh);
+      qs('marB').value = Number(mv);
+      qs('marL').value = Number(mh);
+      update();
+    });
+
+    // examples
+    qs('reset').addEventListener('click', ()=>{
+      // reset some values
+      qs('width').value=200;qs('height').value=120;qs('padding').value=12;qs('padTop').value=12;qs('padR').value=12;qs('padB').value=12;qs('padL').value=12;
+      qs('margin').value=12;qs('marTop').value=12;qs('marR').value=12;qs('marB').value=12;qs('marL').value=12;
+      qs('bwidth').value=4;qs('bstyle').value='solid';qs('bcolor').value='#2563eb';qs('bradius').value=8;qs('boxsizing').value='border-box';qs('displayProp').value='inline-block';
+      update();
+    });
+
+    qs('exampleInline').addEventListener('click', ()=>{
+      box.style.display='inline';
+      qs('displayProp').value='inline';
+      update();
+      alert('Display changed to inline. Notice how width/height may not apply as expected to inline elements.');
+    });
+
+    // initial update
+    update();
+
+    // keep inspector live while resizing window
+    window.addEventListener('resize', refreshInspector);
+
+    // small keyboard shortcut for toggling box-sizing
+    window.addEventListener('keydown',(e)=>{
+      if(e.key==='b' && (e.ctrlKey||e.metaKey)){
+        qs('boxsizing').value = qs('boxsizing').value==='border-box'?'content-box':'border-box';
+        update();
+      }
+    });
+  </script>
+</body>
+</html>
